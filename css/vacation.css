@@ -1,0 +1,74 @@
+.vacation-section {
+  background-color: #99EBF44D;
+  padding: 68px 140px 124px 140px;
+}
+
+.vacation-container {
+  width: 1260px;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.v-h {
+  color: var(--black-color);
+}
+
+.vacation-box {
+  width: 373px;
+  padding-bottom: 26px;
+  background-color: var(--white-color);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.city-img {
+  background-color: #99EBF44D;
+}
+
+.vacation-text-wrapper {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.city-h {
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--black-color);
+}
+
+.vacation-p {
+  margin-top: 16px;
+  margin-bottom: 45px;
+  width: 325px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #6A6A6A;
+  line-height: 16.71px;
+  text-transform: capitalize;
+}
+
+.vac-price {
+  width: 333px;
+  justify-content: space-between;
+}
+
+.vac-price-p {
+  font-weight: 500;
+  font-size: 36px;
+  color: #FF6B6B;
+  /* margin-right: 90px; */
+}
+
+.from {
+  font-size: 20px;
+  margin-right: 10px;
+  color: var(--black-color);
+}
+
+.vac-btn {
+  padding-right: 20px;
+  padding-left: 20px;
+}

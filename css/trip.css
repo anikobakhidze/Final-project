@@ -1,0 +1,39 @@
+.t-h {
+  width: 414px;
+  margin: 39px auto 80px auto;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 57.28px;
+  color: var(--black-color);
+}
+
+.trip-container {
+  width: 1123px;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 80px auto;
+}
+
+.step-info {
+  margin-left: 29px;
+}
+
+.step-wrapper:not(:last-child) {
+
+  margin-bottom: 44px;
+}
+
+.step-h {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--lightgreen-color);
+}
+
+.step-p {
+  width: 419px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #A1A1A1;
+}
