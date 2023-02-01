@@ -4,7 +4,6 @@
   text-align: center;
   text-transform: capitalize;
   line-height: 57.28px;
-  color: var(--black-color);
 }
 
 .trip-container {
@@ -20,7 +19,6 @@
 }
 
 .step-wrapper:not(:last-child) {
-
   margin-bottom: 44px;
 }
 
@@ -35,5 +33,5 @@
   width: 419px;
   font-size: 16px;
   line-height: 19px;
-  color: #A1A1A1;
+  color: #a1a1a1;
 }

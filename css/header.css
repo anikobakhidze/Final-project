@@ -1,27 +1,32 @@
+.fixed {
+  position: fixed;
+  z-index: 2;
+  padding-top: 30px;
+  width: 100%;
+  background-color: var(--white-color);
+}
+.header-logo {
+  animation: zoom-logo 3s linear infinite;
+}
 .header-container {
-  width: 1149px;
-  max-width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 28px auto;
-
+  width: 1149px;
+  max-width: 100%;
+  margin: 0 auto;
 }
-
 .header-lists {
   width: 429px;
   max-width: 100%;
   justify-content: space-between;
-
 }
-
 .nav-li {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 400;
   font-size: 16px;
   color: var(--black-color);
   position: relative;
 }
-
 .nav-li:hover::after {
   content: "";
   position: absolute;
@@ -53,6 +58,7 @@
 
 /* Explore the world section  */
 .explore-container {
+  padding-top: 143px;
   width: 1270px;
   max-width: 100%;
   margin: 0 auto 90px auto;
@@ -87,9 +93,9 @@
 .explore-p {
   width: 489px;
   margin-bottom: 60px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #A1A1A1;
+  color: #a1a1a1;
 }

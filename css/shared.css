@@ -1,12 +1,11 @@
 :root {
-  --lightgreen-color: #00A0B1;
-  --white-color: #FFFFFF;
+  --lightgreen-color: #00a0b1;
+  --white-color: #ffffff;
   --black-color: #000000;
 }
 
 body {
-  font-family: 'SF Pro Display';
-  margin-top: 30px;
+  font-family: "SF Pro Display";
 }
 
 .flex {
@@ -14,9 +13,12 @@ body {
 }
 
 button {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 600;
   cursor: pointer;
   border: none;
   border-radius: 5px;
+}
+button:hover {
+  animation: list-animation 0.7s ease-in 1;
 }
