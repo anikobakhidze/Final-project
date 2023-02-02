@@ -19,6 +19,7 @@ button {
   border: none;
   border-radius: 5px;
 }
+
 button:hover {
   animation: list-animation 0.7s ease-in 1;
 }
