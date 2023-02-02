@@ -5,9 +5,17 @@
   width: 100%;
   background-color: var(--white-color);
 }
+
 .header-logo {
   animation: zoom-logo 3s linear infinite;
 }
+
+.burger-bar {
+  display: none;
+  font-size: 25px;
+  color: var(--lightgreen-color);
+}
+
 .header-container {
   justify-content: space-between;
   align-items: center;
@@ -15,11 +23,13 @@
   max-width: 100%;
   margin: 0 auto;
 }
+
 .header-lists {
   width: 429px;
   max-width: 100%;
   justify-content: space-between;
 }
+
 .nav-li {
   font-family: "Poppins";
   font-weight: 400;
@@ -27,6 +37,7 @@
   color: var(--black-color);
   position: relative;
 }
+
 .nav-li:hover::after {
   content: "";
   position: absolute;
