@@ -17,12 +17,82 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/modal.css" />
     <script
       src="https://kit.fontawesome.com/9250806be3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <div class="modal-wrapper-log flex hidden">
+      <form class="log-in-form" id="">
+        <p id="close-modal">X</p>
+        <input
+          class="reg-inp"
+          type="text"
+          id="username"
+          placeholder="Username"
+        />
+        <input
+          class="reg-inp"
+          type="text"
+          id="Password"
+          placeholder="Password"
+        />
+        <button class="reg-inp" id="logInBtn" onclick="logIn()">Login</button>
+      </form>
+    </div>
+    <div class="modal-wrapper-sign hidden" id="signUpWrapper">
+      <form class="sign-up-form" id="signUpForm">
+        <p id="close-modal">X</p>
+        <input class="reg-inp" type="email" id="email" placeholder="Email" />
+        <input
+          class="reg-inp"
+          type="text"
+          id="usernameSignUp"
+          placeholder="Username"
+        />
+        <input
+          class="reg-inp"
+          type="password"
+          id="passwordSignUp"
+          placeholder="Password"
+        />
+        <input
+          class="reg-inp"
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <div class="checkbox-wrapper flex">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox-txt"
+            >Agree to
+            <a href="#" class="terms-color">Terms&Conditions</a></label
+          >
+        </div>
+        <button id="signUp" onclick="signUpBtn()">Signup</button>
+        <p class="hidden error" id="emptyFields">
+          Please, Fill the empty fields
+        </p>
+        <p class="hidden error" id="usernameError">
+          Username must be more than 3 characters
+        </p>
+        <p class="hidden error" id="emailError">
+          Email isn't valid (example@email.com)
+        </p>
+        <p class="hidden error" id="passwordError">
+          Password must be more than 7 characters
+        </p>
+        <p class="hidden error" id="passwordErrorChar">
+          Password must have more than 1 uppercase letter
+        </p>
+        <p class="hidden error" id="checkPasswords">
+          Passwords must be the same
+        </p>
+        <p class="hidden error" id="userExists">Username has already exists</p>
+      </form>
+    </div>
     <header class="fixed">
       <div class="header-container flex">
         <a href="index.html">
@@ -37,8 +107,8 @@
           </ul>
         </nav>
         <div class="sign-btn-wrapper flex">
-          <button type="submit" class="log-in-btn">Login</button>
-          <button type="submit" class="btn">Signup</button>
+          <button class="log-in-btn">Login</button>
+          <button class="btn" onclick="signUpMain()">Signup</button>
         </div>
         <div class="burger-bar"><i class="fa-solid fa-bars"></i></div>
       </div>
@@ -312,5 +382,6 @@
         </div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
