@@ -1,0 +1,99 @@
+@media screen and (max-width: 1430px) {
+  /* explore the world section */
+  .explore-container {
+    width: 1100px;
+  }
+
+  .right-box {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-heading {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .explore-h {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+  }
+
+  .explore-h,
+  .explore-p {
+    text-align: center;
+  }
+
+  /* vacation section */
+  .vacation-container {
+    width: 1100px;
+  }
+
+  .vacation-box {
+    width: 300px;
+  }
+
+  .city-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .city-h {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  .vacation-p {
+    width: 280px;
+    margin-top: 12px;
+    margin-bottom: 35px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .vac-price {
+    width: 100%;
+    align-items: center;
+    padding-right: 30px;
+  }
+
+  .vac-price-p {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  /* why choose us section */
+  .choose-container {
+    width: 1100px;
+  }
+
+  .right-choose-box {
+    width: 600px;
+  }
+
+  .choose-h {
+    margin-bottom: 25px;
+    font-size: 38px;
+  }
+
+  .choose-p-first,
+  .choose-p-second {
+    font-size: 16px;
+  }
+
+  .choose-p-second {
+    margin-bottom: 50px;
+  }
+
+  .quantity-p {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  .tour-rating {
+    font-size: 20px;
+  }
+}

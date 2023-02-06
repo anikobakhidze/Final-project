@@ -15,14 +15,103 @@
     <link rel="stylesheet" href="css/why-us.css" />
     <link rel="stylesheet" href="css/see-tour.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/responsive-one.css" />
+    <link rel="stylesheet" href="css/responsive-two.css" />
+    <link rel="stylesheet" href="css/responsive-three.css" />
+    <link rel="stylesheet" href="css/responsive-four.css" />
     <script
       src="https://kit.fontawesome.com/9250806be3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <div class="modal-wrapper-log hidden" id="logInWrapper">
+      <form class="log-in-form" id="logInForm">
+        <p id="closeLogIn" onclick="logInModal()">X</p>
+        <input
+          class="reg-inp"
+          type="text"
+          id="username"
+          placeholder="Username"
+        />
+        <input
+          class="reg-inp"
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
+        <button class="reg-inp" id="logInBtn" onclick="logIn()">Login</button>
+        <p class="hidden error" id="emptyInputs">
+          Please, Fill the empty fields
+        </p>
+        <p class="hidden error" id="passErrorOne">
+          Password must be more than 7 characters
+        </p>
+        <p class="hidden error" id="passErrorTwo">
+          Password must have more than 1 uppercase letter
+        </p>
+      </form>
+    </div>
+    <div class="modal-wrapper-sign hidden" id="signUpWrapper">
+      <form class="sign-up-form" id="signUpForm">
+        <p id="closeModal" onclick="closeModal()">X</p>
+        <input class="reg-inp" type="email" id="email" placeholder="Email" />
+        <input
+          class="reg-inp"
+          type="text"
+          id="usernameSignUp"
+          placeholder="Username"
+        />
+        <input
+          class="reg-inp"
+          type="password"
+          id="passwordSignUp"
+          placeholder="Password"
+        />
+        <input
+          class="reg-inp"
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <div class="checkbox-wrapper flex">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox-txt"
+            >Agree to
+            <a href="#" class="terms-color">Terms&Conditions</a></label
+          >
+        </div>
+        <button id="signUp" onclick="signUpBtn()">Signup</button>
+        <p class="hidden error" id="emptyFields">
+          Please, Fill the empty fields
+        </p>
+        <p class="hidden error" id="usernameError">
+          Username must be more than 3 characters
+        </p>
+        <p class="hidden error" id="emailError">
+          Email isn't valid (example@email.com)
+        </p>
+        <p class="hidden error" id="passwordError">
+          Password must be more than 7 characters
+        </p>
+        <p class="hidden error" id="passwordErrorChar">
+          Password must have more than 1 uppercase letter
+        </p>
+        <p class="hidden error" id="checkPasswords">
+          Passwords must be the same
+        </p>
+        <p class="hidden error" id="checkboxChecked">
+          Please, Agree to terms&conditions
+        </p>
+        <p class="hidden error" id="userExists">Username has already exists</p>
+        <p class="hidden error" id="emailExists">Email has already exists</p>
+        <p class="hidden error" id="successReg">
+          Hello, You have registered successfully
+        </p>
+      </form>
+    </div>
     <header class="fixed">
       <div class="header-container flex">
         <a href="index.html">
@@ -30,37 +119,40 @@
         </a>
         <nav>
           <ul class="flex header-lists">
-            <li><a href="#" class="nav-li active">Home</a></li>
+            <li><a href="index.html" class="nav-li active">Home</a></li>
             <li><a href="#" class="nav-li">Explore</a></li>
             <li><a href="#" class="nav-li">About Us</a></li>
             <li><a href="#" class="nav-li">Contact Us</a></li>
           </ul>
         </nav>
         <div class="sign-btn-wrapper flex">
-          <button type="submit" class="log-in-btn">Login</button>
-          <button type="submit" class="btn">Signup</button>
+          <button class="log-in-btn" id="logMainBtn" onclick="logInMain()">
+            Login
+          </button>
+          <button class="btn" id="signMainBtn" onclick="signUpMain()">
+            Signup
+          </button>
+          <p class="hidden" id="ul"></p>
         </div>
         <div class="burger-bar"><i class="fa-solid fa-bars"></i></div>
       </div>
     </header>
     <!-- Explore the world section  -->
-    <section>
-      <div class="explore-container flex">
-        <div class="left-box">
-          <img src="images/explore-img.png" alt="Picture of the city" />
-        </div>
-        <div class="right-box">
-          <h4 class="about-heading">EXPLORE THE WORLD</h4>
-          <h3 class="explore-h">
-            Its time <span class="new-line-p">to travel around</span> the World
-          </h3>
-          <p class="explore-p">
-            Check Off the Ultimate Global Travel Checklist With your Travel
-            Partner! Make your vacation a fun, exciting, and unforgettable
-            experience.
-          </p>
-          <button class="btn">Discover Now</button>
-        </div>
+    <section class="explore-container flex">
+      <div class="left-box">
+        <img src="images/explore-img.png" alt="Picture of the city" />
+      </div>
+      <div class="right-box">
+        <h4 class="about-heading">EXPLORE THE WORLD</h4>
+        <h3 class="explore-h">
+          Its time <span class="new-line-p">to travel around</span> the World
+        </h3>
+        <p class="explore-p">
+          Check Off the Ultimate Global Travel Checklist With your Travel
+          Partner! Make your vacation a fun, exciting, and unforgettable
+          experience.
+        </p>
+        <button class="btn">Discover Now</button>
       </div>
     </section>
     <!-- Popular Destination section -->
@@ -238,20 +330,19 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis.
           </p>
-          <div class="about-rating-container flex">
-            <div class="rating-wrapper flex">
-              <p class="quantity-p">5K+</p>
-              <p class="tour-rating">Success Tour</p>
-            </div>
-            <div class="rating-wrapper flex">
-              <p class="quantity-p">10K+</p>
-              <p class="tour-rating">Happy Clients</p>
-            </div>
-            <div class="rating-wrapper flex">
-              <p class="quantity-p">15K+</p>
-              <p class="tour-rating">Years Experience</p>
-            </div>
+          <div class="rating-wrapper  flex" id="ratingWrapper">
+            <p class="quantity-p flex" id="firstQ"></p>
+            <p class="tour-rating flex" id="firstR" ></p>
           </div>
+            <!-- <ul class="rating-wrapper flex">
+              <li class="quantity-p" >10K+</li>
+              <li class="tour-rating">Happy Clients</li>
+            </ul>
+            <ul class="rating-wrapper flex">
+              <li class="quantity-p">15K+</li>
+              <li class="tour-rating">Years Experience</li>
+            </ul> -->
+        
         </div>
       </div>
     </section>
@@ -267,7 +358,15 @@
             inceptos himenaeos. Curabitur tempus urna at turpis condimentum
             lobortis.
           </p>
-          <button type="button" class="btn see-tours-btn">See Tours</button>
+          <button class="btn see-tours-btn" onclick="seeTours()">
+            See Tours
+          </button>
+          <div class="modal-wrapper-tours hidden" id="seeToursWrapper">
+            <ul id="tourWrapper">
+             <p id="closeLogIn" onclick="seeToursModal()">X</p>
+            </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -312,5 +411,6 @@
         </div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

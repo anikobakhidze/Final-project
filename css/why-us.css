@@ -52,28 +52,39 @@
   margin-bottom: 80px;
 }
 
-.about-rating-container {
+/* .about-rating-container {
   justify-content: space-between;
-}
+} */
 
 .rating-wrapper {
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .quantity-p {
+  width: 100%;
+  justify-content: space-around;
+  padding-right: 50px;
   font-weight: 800;
   font-size: 48px;
   line-height: 57.28px;
   margin-bottom: 31px;
 }
-
+/* .quantity-p span:first-child {
+  margin-right: 96.5px;
+}
+.quantity-p span:last-child {
+  margin-left: 121px;
+} */
 .quantity-p,
 .tour-rating {
   color: var(--black-color);
 }
 
 .tour-rating {
+  width: 100%;
+  justify-content: space-around;
   font-weight: 600;
   font-size: 24px;
 }

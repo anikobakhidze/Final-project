@@ -1,0 +1,167 @@
+@media screen and (max-width: 550px) {
+  /* header section */
+  .header-container {
+    width: 310px;
+  }
+
+  /* explore the world section */
+  .explore-container {
+    width: 300px;
+    align-items: center;
+  }
+
+  .left-box {
+    display: none;
+  }
+
+  .right-box {
+    width: 100%;
+  }
+
+  /* popular destination section */
+  .popular-destination {
+    margin-bottom: 20px;
+  }
+
+  .heading-section {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .popular-container {
+    width: 300px;
+  }
+
+  .destination-img {
+    margin-bottom: 10px;
+  }
+
+  .location-p {
+    margin-left: 8px;
+  }
+
+  /* vacation section */
+  .vacation-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .vacation-box {
+    width: 300px;
+  }
+
+  .city-h {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .vacation-p {
+    width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .from {
+    font-size: 18px;
+  }
+
+  .vac-price-p {
+    font-size: 20px;
+  }
+
+  /* book trip section */
+  .t-h {
+    width: 200px;
+    line-height: 22px;
+  }
+
+  .trip-container {
+    width: 300px;
+    margin-bottom: 40px;
+  }
+
+  .left-trip-box {
+    width: 100%;
+  }
+
+  .step-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-wrapper img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  /* why choose us section */
+  .choose-section {
+    padding-bottom: 0;
+  }
+
+  .choose-container {
+    width: 300px;
+  }
+
+  .choose-pic-wrapper:first-child {
+    display: none;
+  }
+
+  .choose-pic-wrapper:nth-child(2) {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .choose-pic-wrapper img:first-child {
+    margin-bottom: 10px;
+  }
+
+  .choose-h,
+  .quantity-p {
+    font-size: 20px;
+  }
+
+  .choose-p-first,
+  .choose-p-second,
+  .tour-rating {
+    font-size: 14px;
+  }
+
+  .quantity-p {
+    margin-bottom: 10px;
+  }
+
+  /* see tours section */
+  .see-tours-wrapper {
+    width: 300px;
+    margin-top: 150px;
+  }
+
+  .see-tours-h {
+    color: var(--black-color);
+  }
+
+  .see-tours-p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  /* footer section */
+  footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .footer-link-wrapper {
+    display: none;
+  }
+  .footer-logo {
+    margin-bottom: 40px;
+  }
+  .footer-h {
+    text-align: center;
+  }
+  .footer-container {
+    width: 300px;
+    flex-direction: column;
+  }
+}
