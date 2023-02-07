@@ -47,8 +47,7 @@ function closeModal() {
 }
 document.addEventListener("click", (event) => {
   if (event.target == signUpWrapper) {
-    signUpWrapper.classList.remove("visible");
-    signUpWrapper.classList.add("hidden");
+    closeModal()
   }
 });
 //reset form
@@ -138,8 +137,7 @@ function logInModal() {
 }
 document.addEventListener("click", (event) => {
   if (event.target == logInWrapper) {
-    logInWrapper.classList.remove("visible");
-    logInWrapper.classList.add("hidden");
+    logInModal()
   }
 });
 // hide btns
@@ -156,11 +154,11 @@ async function logIn() {
   let password = document.getElementById("password").value;
   if (!username || !password) {
     errorMessage("emptyInputs");
-  } else if (password.length < 8) {
+  } else if (password && password.length < 8) {
     errorMessage("passErrorOne");
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
-  } else if(!jsonUsers.some((el)=> el.username.toLowerCase()==username.toLowerCase())){
+  } else if(!jsonUsers.some((el)=> el.username.toLowerCase()==username.toLowerCase)){
     errorMessage("userNotExist")
   }else if(!jsonUsers.some((el)=> el.password==password)){
     errorMessage("passNotExist")
@@ -179,14 +177,6 @@ async function logIn() {
     pUserName.classList.add("visible");
   }
 }
-
-// get users
-function getUsers() {
-  fetch(`${url}/users`, { method: "Get" })
-    .then((res) => res.json())
-    .then((data) => console.log(data));
-}
-
 // see tours
 let seeToursWrapper = document.getElementById("seeToursWrapper");
 let tourWrapper = document.getElementById("tourWrapper");
@@ -211,7 +201,7 @@ function seeToursModal() {
   seeToursWrapper.classList.remove("visible");
   seeToursWrapper.classList.add("hidden");
 }
-addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
   if (event.target == seeToursWrapper) {
     seeToursModal();
   }
