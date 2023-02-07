@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/why-us.css" />
     <link rel="stylesheet" href="css/see-tour.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive-one.css" />
     <link rel="stylesheet" href="css/responsive-two.css" />
@@ -53,12 +52,8 @@
         <p class="hidden error" id="passErrorTwo">
           Password must have more than 1 uppercase letter
         </p>
-        <p class="hidden error" id="userNotExist">
-          Username do not exists
-        </p>
-        <p class="hidden error" id="passNotExist">
-         Password is wrong
-        </p>
+        <p class="hidden error" id="userNotExist">Username do not exists</p>
+        <p class="hidden error" id="passNotExist">Password is wrong</p>
       </form>
     </div>
     <div class="modal-wrapper-sign hidden" id="signUpWrapper">
@@ -139,7 +134,7 @@
           <button class="btn" id="signMainBtn" onclick="signUpMain()">
             Signup
           </button>
-          <p class="hidden" id="ul"></p>
+          <p class="hidden" id="registrationUserName"></p>
         </div>
         <div class="burger-bar"><i class="fa-solid fa-bars"></i></div>
       </div>
@@ -232,7 +227,7 @@
             </p>
             <div class="vac-price flex">
               <p class="vac-price-p"><span class="from">From</span>$500</p>
-              <button type="button" class="btn vac-btn">Details</button>
+              <button class="btn vac-btn">Details</button>
             </div>
           </div>
         </div>
@@ -248,7 +243,7 @@
             </p>
             <div class="vac-price flex">
               <p class="vac-price-p"><span class="from">From</span>$700</p>
-              <button type="button" class="btn vac-btn">Details</button>
+              <button class="btn vac-btn">Details</button>
             </div>
           </div>
         </div>
@@ -264,7 +259,7 @@
             </p>
             <div class="vac-price flex">
               <p class="vac-price-p"><span class="from">From</span>$459</p>
-              <button type="button" class="btn vac-btn">Details</button>
+              <button class="btn vac-btn">Details</button>
             </div>
           </div>
         </div>
@@ -337,19 +332,10 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis.
           </p>
-          <div class="rating-wrapper  flex" id="ratingWrapper">
+          <div class="rating-wrapper flex" id="ratingWrapper">
             <p class="quantity-p flex" id="firstQ"></p>
-            <p class="tour-rating flex" id="firstR" ></p>
+            <p class="tour-rating flex" id="firstR"></p>
           </div>
-            <!-- <ul class="rating-wrapper flex">
-              <li class="quantity-p" >10K+</li>
-              <li class="tour-rating">Happy Clients</li>
-            </ul>
-            <ul class="rating-wrapper flex">
-              <li class="quantity-p">15K+</li>
-              <li class="tour-rating">Years Experience</li>
-            </ul> -->
-        
         </div>
       </div>
     </section>
@@ -369,10 +355,10 @@
             See Tours
           </button>
           <div class="modal-wrapper-tours hidden" id="seeToursWrapper">
-            <ul id="tourWrapper">
-             <p id="closeLogIn" onclick="seeToursModal()">X</p>
-            </ul>
-            </ul>
+            <div id="tourWrapperBox">
+              <p id="closeLogIn" onclick="seeToursModal()">X</p>
+              <ul id="tourWrapper"></ul>
+            </div>
           </div>
         </div>
       </div>

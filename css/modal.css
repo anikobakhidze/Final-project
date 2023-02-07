@@ -50,7 +50,7 @@
 
 .log-in-form,
 .sign-up-form,
-#tourWrapper {
+#tourWrapperBox {
   width: 300px;
   height: 450px;
   padding: 20px;
@@ -132,6 +132,4 @@
   color: var(--lightgreen-color);
   font-size: 20px;
   border: 1px solid rgb(195, 159, 16);
-}
-
 }

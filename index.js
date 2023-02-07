@@ -47,7 +47,7 @@ function closeModal() {
 }
 document.addEventListener("click", (event) => {
   if (event.target == signUpWrapper) {
-    closeModal()
+    closeModal();
   }
 });
 //reset form
@@ -64,12 +64,11 @@ function signUpMain() {
 function getEmail() {
   fetch(`${url}/users`, { method: "get" })
     .then((res) => res.json())
-    .then((data) =>   data)
-          
-  }
+    .then((data) => data);
+}
 
 async function signUpBtn() {
- let jsonUsers=await fetch(`${url}/users`, { method: "get" })
+  let jsonUsers = await fetch(`${url}/users`, { method: "get" })
     .then((res) => res.json())
     .then((data) => data);
   let email = document.getElementById("email").value;
@@ -96,14 +95,13 @@ async function signUpBtn() {
     jsonUsers.some((el) => el.email.toLowerCase() === email.toLowerCase())
   ) {
     errorMessage("emailExists");
-  }
-  else if (
-    jsonUsers.some((el) => el.username.toLowerCase() === userNameSignUp.toLowerCase())
+  } else if (
+    jsonUsers.some(
+      (el) => el.username.toLowerCase() === userNameSignUp.toLowerCase()
     )
- {
+  ) {
     errorMessage("userExists");
-  }
-  else {
+  } else {
     function usersPost() {
       (users = {
         id: Math.random(),
@@ -137,7 +135,7 @@ function logInModal() {
 }
 document.addEventListener("click", (event) => {
   if (event.target == logInWrapper) {
-    logInModal()
+    logInModal();
   }
 });
 // hide btns
@@ -147,9 +145,9 @@ function hideBtn(id) {
 }
 //log in form
 async function logIn() {
-  let jsonUsers=await fetch(`${url}/users`, { method: "get" })
-  .then((res) => res.json())
-  .then((data) => data);
+  let jsonUsers = await fetch(`${url}/users`, { method: "get" })
+    .then((res) => res.json())
+    .then((data) => data);
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   if (!username || !password) {
@@ -158,19 +156,20 @@ async function logIn() {
     errorMessage("passErrorOne");
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
-  } else if(!jsonUsers.some((el)=> el.username.toLowerCase()==username.toLowerCase)){
-    errorMessage("userNotExist")
-  }else if(!jsonUsers.some((el)=> el.password==password)){
-    errorMessage("passNotExist")
-  }
-  else {
+  } else if (
+    !jsonUsers.some((el) => el.username.toLowerCase() == username.toLowerCase)
+  ) {
+    errorMessage("userNotExist");
+  } else if (
+    !jsonUsers.some((el) => el.password.toLowerCase() == password.toLowerCase())
+  ) {
+    errorMessage("passNotExist");
+  } else {
     resetForm("logInForm");
     logInModal();
     hideBtn("logMainBtn");
     hideBtn("signMainBtn");
-    let pUserName = document.getElementById("ul");
-    pUserName.style.fontSize = "20px";
-    pUserName.style.color = "lightseagreen";
+    let pUserName = document.getElementById("registrationUserName");
     let text = document.createTextNode(`${username}`);
     pUserName.appendChild(text);
     pUserName.classList.remove("hidden");

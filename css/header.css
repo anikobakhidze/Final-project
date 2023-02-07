@@ -66,7 +66,10 @@
   color: var(--white-color);
   background-color: var(--lightgreen-color);
 }
-
+#registrationUserName {
+  font-size: 20px;
+  color: var(--lightgreen-color);
+}
 /* Explore the world section  */
 .explore-container {
   padding-top: 143px;
