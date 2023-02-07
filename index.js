@@ -157,7 +157,7 @@ async function logIn() {
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
   } else if (
-    !jsonUsers.some((el) => el.username.toLowerCase() == username.toLowerCase)
+    !jsonUsers.some((el) => el.username.toLowerCase() == username.toLowerCase())
   ) {
     errorMessage("userNotExist");
   } else if (
