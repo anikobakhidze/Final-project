@@ -62,26 +62,23 @@ let url = " http://localhost:3000";
 function signUpMain() {
   hiddenEl("signUpWrapper");
 }
-// function getEmail() {
-//   fetch(`${url}/users`, { method: "get" })
-//     .then((res) => res.json())
-//     .then((data) => {
-//       for (let i of data) {
-//         for (let j of i) {
-//           if (j.email.toLowerCase() == email.toLowerCase()) {
-//             return "error";
-//           }
-//         }
-//       }
-//     });
-// }
+function getEmail() {
+  fetch(`${url}/users`, { method: "get" })
+    .then((res) => res.json())
+    .then((data) =>   data)
+          
+  }
 
-function signUpBtn() {
+async function signUpBtn() {
+ let jsonUsers=await fetch(`${url}/users`, { method: "get" })
+    .then((res) => res.json())
+    .then((data) => data);
   let email = document.getElementById("email").value;
   let userNameSignUp = document.getElementById("usernameSignUp").value;
   let passwordSignUp = document.getElementById("passwordSignUp").value;
   let confirmPassword = document.getElementById("confirmPassword").value;
   let checkbox = document.getElementById("checkbox").checked;
+
   if (!email || !userNameSignUp || !passwordSignUp || !confirmPassword) {
     errorMessage("emptyFields");
   } else if (!email.includes("@")) {
@@ -97,23 +94,16 @@ function signUpBtn() {
   } else if (!checkbox) {
     errorMessage("checkboxChecked");
   } else if (
-    users.some((el) => el.email.toLowerCase() == email.toLowerCase())
+    jsonUsers.some((el) => el.email.toLowerCase() === email.toLowerCase())
   ) {
     errorMessage("emailExists");
   }
-  // else if (
-  //   function getUsers() {
-  //     fetch(`${url}/users`, { method: "Get" })
-  //       .then((res) => res.json())
-  //       .then((data) =>
-  //         data.some(
-  //           (el) => el.username.toLowerCase() == userNameSignUp.toLowerCase()
-  //         )
-  //       );
-  //   }
-  // ) {
-  //   errorMessage("userExists");
-  // }
+  else if (
+    jsonUsers.some((el) => el.username.toLowerCase() === userNameSignUp.toLowerCase())
+    )
+ {
+    errorMessage("userExists");
+  }
   else {
     function usersPost() {
       (users = {
@@ -158,7 +148,10 @@ function hideBtn(id) {
   elem.classList.add("hidden");
 }
 //log in form
-function logIn() {
+async function logIn() {
+  let jsonUsers=await fetch(`${url}/users`, { method: "get" })
+  .then((res) => res.json())
+  .then((data) => data);
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   if (!username || !password) {
@@ -167,7 +160,10 @@ function logIn() {
     errorMessage("passErrorOne");
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
-  } else {
+  } else if(!jsonUsers.some((el)=> el.username==username)){
+    errorMessage("userNotExist")
+  }
+  else {
     resetForm("logInForm");
     logInModal();
     hideBtn("logMainBtn");
