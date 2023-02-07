@@ -160,8 +160,10 @@ async function logIn() {
     errorMessage("passErrorOne");
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
-  } else if(!jsonUsers.some((el)=> el.username==username)){
+  } else if(!jsonUsers.some((el)=> el.username.toLowerCase()==username.toLowerCase())){
     errorMessage("userNotExist")
+  }else if(!jsonUsers.some((el)=> el.password==password)){
+    errorMessage("passNotExist")
   }
   else {
     resetForm("logInForm");
