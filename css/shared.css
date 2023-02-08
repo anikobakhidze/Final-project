@@ -18,6 +18,7 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 5px;
+  transition: all 0.3s;
 }
 
 button:hover {

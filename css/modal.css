@@ -6,25 +6,21 @@
   display: block;
 }
 
-.modal-wrapper-sign #close-modal {
-  margin-bottom: 10px;
-}
-
-.modal-wrapper-log #close-modal {
-  margin-bottom: 40px;
-}
-
 #closeModal,
-#closeLogIn {
+#closeLogIn,
+#closeSeeTours {
   font-size: 20px;
   text-align: end;
   color: #03515a;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
-.modal-wrapper-log,
-.modal-wrapper-sign,
-.modal-wrapper-tours {
+#closeLogIn {
+  margin-bottom: 40px;
+}
+
+.modal {
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -35,9 +31,7 @@
   z-index: 4;
 }
 
-.modal-wrapper-sign:before,
-.modal-wrapper-log:before,
-.modal-wrapper-tours:before {
+.modal:before {
   content: " ";
   position: absolute;
   top: 0;
@@ -59,18 +53,17 @@
   z-index: 5;
 }
 
-.modal-wrapper-sign .reg-inp {
+.sign-up-form .reg-inp {
   margin-bottom: 20px;
 }
 
-.modal-wrapper-log .reg-inp {
+.log-in-form .reg-inp {
   margin-bottom: 30px;
 }
 
 .reg-inp {
   width: 100%;
   height: 40px;
-
   padding: 5px;
   font-size: 16px;
   color: #006672;
@@ -123,9 +116,11 @@
   color: #d88c60;
   font-size: 16px;
 }
+
 #successReg {
   color: lightseagreen;
 }
+
 #tourWrapper li {
   margin-bottom: 20px;
   padding: 10px;

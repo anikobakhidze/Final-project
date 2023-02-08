@@ -1,6 +1,6 @@
 let users = [];
 // handle form
-let form = document.getElementById("signUpForm");
+// let form = document.getElementById("signUpForm");
 function handleForm(event) {
   event.preventDefault();
 }
@@ -41,15 +41,23 @@ function countLetter(data) {
   return count;
 }
 //close modal
-function closeModal() {
-  signUpWrapper.classList.remove("visible");
-  signUpWrapper.classList.add("hidden");
+function closeModal(id) {
+  let elementModal = document.getElementById(id);
+  elementModal.classList.remove("visible");
+  elementModal.classList.add("hidden");
+
 }
+let modalElements = document.querySelectorAll('.modal');
+for (let i = 0; i < modalElements.length; i++) {
+let elementModal = modalElements[i];
+let id = elementModal.id;
 document.addEventListener("click", (event) => {
-  if (event.target == signUpWrapper) {
-    closeModal();
-  }
+if (event.target == document.getElementById(id)) {
+closeModal(id);
+}
 });
+}
+
 //reset form
 function resetForm(id) {
   let resetForm = document.getElementById(id);
@@ -60,6 +68,8 @@ let url = " http://localhost:3000";
 // sign up
 function signUpMain() {
   hiddenEl("signUpWrapper");
+  resetForm('signUpForm');
+  
 }
 function getEmail() {
   fetch(`${url}/users`, { method: "get" })
@@ -127,17 +137,8 @@ async function signUpBtn() {
 // open log in form
 function logInMain() {
   hiddenEl("logInWrapper");
+  resetForm('logInForm')
 }
-// close Modal
-function logInModal() {
-  logInWrapper.classList.remove("visible");
-  logInWrapper.classList.add("hidden");
-}
-document.addEventListener("click", (event) => {
-  if (event.target == logInWrapper) {
-    logInModal();
-  }
-});
 // hide btns
 function hideBtn(id) {
   let elem = document.getElementById(id);
@@ -157,20 +158,20 @@ async function logIn() {
   } else if (countLetter(password) < 2) {
     errorMessage("passErrorTwo");
   } else if (
-    !jsonUsers.some((el) => el.username.toLowerCase() == username.toLowerCase())
+    !jsonUsers.some((el) => el.username.toLowerCase() === username.toLowerCase())
   ) {
     errorMessage("userNotExist");
   } else if (
-    !jsonUsers.some((el) => el.password.toLowerCase() == password.toLowerCase())
+    !jsonUsers.some((el) => el.password.toLowerCase() === password.toLowerCase())
   ) {
     errorMessage("passNotExist");
   } else {
     resetForm("logInForm");
-    logInModal();
+    closeModal('logInWrapper')
     hideBtn("logMainBtn");
     hideBtn("signMainBtn");
     let pUserName = document.getElementById("registrationUserName");
-    let text = document.createTextNode(`${username}`);
+    let text = document.createTextNode(`Welcome ${username}`);
     pUserName.appendChild(text);
     pUserName.classList.remove("hidden");
     pUserName.classList.add("visible");
@@ -194,17 +195,6 @@ fetch(`${url}/tours`, { method: "get" })
       tourWrapper.appendChild(toursLi);
     }
   });
-
-// close see tours modal
-function seeToursModal() {
-  seeToursWrapper.classList.remove("visible");
-  seeToursWrapper.classList.add("hidden");
-}
-document.addEventListener("click", (event) => {
-  if (event.target == seeToursWrapper) {
-    seeToursModal();
-  }
-});
 // why choose us
 let ratingWrapper = document.getElementById("ratingWrapper");
 fetch(`${url}/rating`, { method: "get" })
