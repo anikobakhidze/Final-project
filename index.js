@@ -70,8 +70,9 @@ function mainButton(idOne, idTwo) {
   resetError(); 
 }
 // sign up form
+
 async function signUpBtn() {
-  let jsonUsers = await fetch(`${url}/users`, { method: "get" })
+  let jsonUsers =await fetch(`${url}/users`, { method: "get" })
     .then((res) => res.json())
     .then((data) => data);
   let email = document.getElementById("email").value;
@@ -105,26 +106,20 @@ async function signUpBtn() {
   ) {
     errorMessage("userExists");
   } else {
-    function usersPost() {
-      (users = {
-        id: Math.random(),
-        email,
-        username: userNameSignUp,
-        password: passwordSignUp,
-      }),
-        fetch(`${url}/users`, {
-          method: "POST",
-          body: JSON.stringify(users),
-          headers: { "Content-type": "application/json" },
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            return data;
-          });
-    }
-    usersPost();
-    errorMessage("successReg");
-    resetForm("signUpForm");
+    users = {
+     id: Math.random(),
+     email,
+     username: userNameSignUp,
+     password: passwordSignUp,
+    };
+    fetch(`${url}/users`, {
+     method: "POST",
+     body: JSON.stringify(users),
+     headers: { "Content-type": "application/json" },
+    }).then((resp) => resp.json())
+    .then((data) =>  data);
+    resetForm("signUpForm");   
+    errorMessage("successReg");     
   }
 }
 // hide btns
@@ -154,7 +149,6 @@ async function logIn() {
   ) {
     errorMessage("passNotExist");
   } else {
-    resetForm("logInForm");
     closeModal('logInWrapper')
     hideBtn("logMainBtn");
     hideBtn("signMainBtn");
