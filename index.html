@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="css/see-tour.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/responsive-one.css" />
     <link rel="stylesheet" href="css/responsive-two.css" />
     <link rel="stylesheet" href="css/responsive-three.css" />
     <link rel="stylesheet" href="css/responsive-four.css" />
-    <link rel="stylesheet" href="css/modal.css" />
+    <!-- <link rel="shortcut icon" href="~/favicon.ico" /> -->
     <script
       src="https://kit.fontawesome.com/9250806be3.js"
       crossorigin="anonymous"
@@ -134,10 +135,18 @@
           </ul>
         </nav>
         <div class="sign-btn-wrapper flex">
-          <button class="log-in-btn" id="logMainBtn" onclick="logInMain()">
+          <button
+            class="log-in-btn"
+            id="logMainBtn"
+            onclick="mainButton('logInWrapper','logInForm')"
+          >
             Login
           </button>
-          <button class="btn" id="signMainBtn" onclick="signUpMain()">
+          <button
+            class="btn"
+            id="signMainBtn"
+            onclick="mainButton('signUpWrapper','signUpForm')"
+          >
             Signup
           </button>
           <p class="hidden" id="registrationUserName"></p>

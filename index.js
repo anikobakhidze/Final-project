@@ -1,6 +1,5 @@
 let users = [];
 // handle form
-// let form = document.getElementById("signUpForm");
 function handleForm(event) {
   event.preventDefault();
 }
@@ -16,7 +15,7 @@ function resetError() {
 document.addEventListener("change", resetError);
 
 // view modal
-function hiddenEl(id) {
+function showEl(id) {
   let el = document.getElementById(id);
   el.classList.add("flex");
   el.classList.remove("hidden");
@@ -57,7 +56,6 @@ closeModal(id);
 }
 });
 }
-
 //reset form
 function resetForm(id) {
   let resetForm = document.getElementById(id);
@@ -65,18 +63,13 @@ function resetForm(id) {
 }
 // json server
 let url = " http://localhost:3000";
-// sign up
-function signUpMain() {
-  hiddenEl("signUpWrapper");
-  resetForm('signUpForm');
-  
+// open sign up or log in form
+function mainButton(idOne, idTwo) {
+  showEl(idOne);
+  resetForm(idTwo); 
+  resetError(); 
 }
-function getEmail() {
-  fetch(`${url}/users`, { method: "get" })
-    .then((res) => res.json())
-    .then((data) => data);
-}
-
+// sign up form
 async function signUpBtn() {
   let jsonUsers = await fetch(`${url}/users`, { method: "get" })
     .then((res) => res.json())
@@ -89,19 +82,19 @@ async function signUpBtn() {
 
   if (!email || !userNameSignUp || !passwordSignUp || !confirmPassword) {
     errorMessage("emptyFields");
-  } else if (!email.includes("@")) {
+  } else if (!checkbox) {
+    errorMessage("checkboxChecked");
+  } else if (email && !email.includes("@")) {
     errorMessage("emailError");
   } else if (userNameSignUp && userNameSignUp.length < 3) {
     errorMessage("usernameError");
   } else if (passwordSignUp && passwordSignUp.length < 8) {
     errorMessage("passwordError");
-  } else if (countLetter(passwordSignUp) < 2) {
+  } else if (passwordSignUp && countLetter(passwordSignUp) < 2) {
     errorMessage("passwordErrorChar");
   } else if (passwordSignUp !== confirmPassword) {
     errorMessage("checkPasswords");
-  } else if (!checkbox) {
-    errorMessage("checkboxChecked");
-  } else if (
+  }  else if (
     jsonUsers.some((el) => el.email.toLowerCase() === email.toLowerCase())
   ) {
     errorMessage("emailExists");
@@ -134,11 +127,6 @@ async function signUpBtn() {
     resetForm("signUpForm");
   }
 }
-// open log in form
-function logInMain() {
-  hiddenEl("logInWrapper");
-  resetForm('logInForm')
-}
 // hide btns
 function hideBtn(id) {
   let elem = document.getElementById(id);
@@ -155,7 +143,7 @@ async function logIn() {
     errorMessage("emptyInputs");
   } else if (password && password.length < 8) {
     errorMessage("passErrorOne");
-  } else if (countLetter(password) < 2) {
+  } else if (password && countLetter(password) < 2) {
     errorMessage("passErrorTwo");
   } else if (
     !jsonUsers.some((el) => el.username.toLowerCase() === username.toLowerCase())
@@ -181,7 +169,7 @@ async function logIn() {
 let seeToursWrapper = document.getElementById("seeToursWrapper");
 let tourWrapper = document.getElementById("tourWrapper");
 function seeTours() {
-  hiddenEl("seeToursWrapper");
+  showEl("seeToursWrapper");
 }
 fetch(`${url}/tours`, { method: "get" })
   .then((data) => {
