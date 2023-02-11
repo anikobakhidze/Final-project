@@ -1,0 +1,130 @@
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+#closeModal,
+#closeLogIn,
+#closeSeeTours {
+  font-size: 20px;
+  text-align: end;
+  color: #03515a;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#closeLogIn {
+  margin-bottom: 40px;
+}
+
+.modal {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+}
+
+.modal:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightgreen-color);
+  opacity: 0.4;
+}
+
+.log-in-form,
+.sign-up-form,
+#tourWrapperBox {
+  width: 300px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  z-index: 5;
+}
+
+.sign-up-form .reg-inp {
+  margin-bottom: 20px;
+}
+
+.log-in-form .reg-inp {
+  margin-bottom: 30px;
+}
+
+.reg-inp {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  font-size: 16px;
+  color: #006672;
+  border-radius: 4px;
+  border: 1px solid var(--lightgreen-color);
+}
+
+.reg-inp::placeholder {
+  color: #02383e;
+}
+
+.reg-inp:focus {
+  outline: none;
+  background-color: #b7dade;
+}
+
+#checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-txt,
+.terms-color {
+  font-size: 18px;
+  color: #7eabb0;
+}
+
+.checkbox-txt {
+  margin-left: 10px;
+  color: #02383e;
+}
+
+.checkbox-wrapper {
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#signUp,
+#logInBtn {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  color: var(--white-color);
+  background-color: var(--lightgreen-color);
+  animation: none;
+}
+
+.error {
+  margin-top: 10px;
+  color: #d88c60;
+  font-size: 16px;
+}
+
+#successReg {
+  color: lightseagreen;
+}
+
+#tourWrapper li {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: var(--lightgreen-color);
+  font-size: 20px;
+  border: 1px solid rgb(195, 159, 16);
+}

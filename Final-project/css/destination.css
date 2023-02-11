@@ -1,0 +1,44 @@
+.popular-destination {
+  margin-bottom: 184px;
+}
+
+.heading-section {
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.popular-container {
+  width: 1157px;
+  max-width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.destination-box {
+  width: 274px;
+}
+
+.destination-img {
+  margin-bottom: 30px;
+}
+
+.dest-h {
+  margin-bottom: 9px;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--black-color);
+}
+
+.location-wrapper {
+  align-items: center;
+}
+
+.location-p {
+  margin-left: 13px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #6A6A6A;
+}

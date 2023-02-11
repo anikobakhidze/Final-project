@@ -1,0 +1,39 @@
+.back-image-wrapper {
+  height: 634px;
+  background-image: url(../images/see-tours-backgroun.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.see-tours-wrapper {
+  width: 880px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 216px auto 0 auto;
+}
+
+.see-tours-h {
+  margin-bottom: 39px;
+  font-weight: 600;
+  font-size: 36px;
+  color: #333333;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.see-tours-p {
+  margin-bottom: 85px;
+  font-weight: 500;
+  font-size: 17px;
+  text-align: center;
+  line-height: 20.29px;
+  color: #6a6a6a;
+}
+
+.see-tours-btn {
+  font-size: 24px;
+
+}

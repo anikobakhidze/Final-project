@@ -1,0 +1,26 @@
+:root {
+  --lightgreen-color: #00a0b1;
+  --white-color: #ffffff;
+  --black-color: #000000;
+}
+
+body {
+  font-family: "SF Pro Display";
+}
+
+.flex {
+  display: flex;
+}
+
+button {
+  font-family: "Poppins";
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  animation: list-animation 0.7s ease-in 1;
+}

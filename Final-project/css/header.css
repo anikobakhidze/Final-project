@@ -1,0 +1,115 @@
+.fixed {
+  position: fixed;
+  z-index: 2;
+  padding-top: 30px;
+  width: 100%;
+  background-color: var(--white-color);
+}
+
+.header-logo {
+  animation: zoom-logo 3s linear infinite;
+}
+
+.burger-bar {
+  display: none;
+  font-size: 25px;
+  color: var(--lightgreen-color);
+}
+
+.header-container {
+  justify-content: space-between;
+  align-items: center;
+  width: 1149px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header-lists {
+  width: 429px;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.nav-li {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black-color);
+  position: relative;
+}
+
+.nav-li:hover::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--black-color);
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 0px;
+}
+
+.sign-btn-wrapper {
+  width: 187px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-in-btn {
+  color: var(--lightgreen-color);
+  font-size: 18px;
+  background-color: var(--white-color);
+}
+
+.btn {
+  font-size: 16px;
+  padding: 5px 15px;
+  color: var(--white-color);
+  background-color: var(--lightgreen-color);
+}
+#registrationUserName {
+  font-size: 20px;
+  color: var(--lightgreen-color);
+}
+/* Explore the world section  */
+.explore-container {
+  padding-top: 143px;
+  width: 1270px;
+  max-width: 100%;
+  margin: 0 auto 90px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-box {
+  width: 635px;
+}
+
+.about-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--lightgreen-color);
+}
+
+.explore-h {
+  margin-bottom: 40px;
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 94px;
+  color: var(--black-color);
+  text-transform: capitalize;
+}
+
+.new-line-p {
+  display: block;
+}
+
+.explore-p {
+  width: 489px;
+  margin-bottom: 60px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #a1a1a1;
+}

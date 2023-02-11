@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voyage-Travel agency</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/destination.css" />
+    <link rel="stylesheet" href="css/vacation.css" />
+    <link rel="stylesheet" href="css/trip.css" />
+    <link rel="stylesheet" href="css/why-us.css" />
+    <link rel="stylesheet" href="css/see-tour.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/responsive-one.css" />
+    <link rel="stylesheet" href="css/responsive-two.css" />
+    <link rel="stylesheet" href="css/responsive-three.css" />
+    <link rel="stylesheet" href="css/responsive-four.css" />
+    <script
+      src="https://kit.fontawesome.com/9250806be3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="hidden modal" id="logInWrapper">
+      <div class="log-in-form">
+        <p id="closeLogIn" onclick="closeModal('logInWrapper')">X</p>
+        <form id="logInForm">
+          <input
+            class="reg-inp"
+            type="text"
+            id="username"
+            placeholder="Username"
+          />
+          <input
+            class="reg-inp"
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button class="reg-inp" id="logInBtn" onclick="logIn()">Login</button>
+        </form>
+        <p class="hidden error" id="emptyInputs">
+          Please, Fill the empty fields
+        </p>
+        <p class="hidden error" id="passErrorOne">
+          Password must be more than 7 characters
+        </p>
+        <p class="hidden error" id="passErrorTwo">
+          Password must have more than 1 uppercase letter
+        </p>
+        <p class="hidden error" id="userNotExist">
+          Username does not exists. Please register
+        </p>
+        <p class="hidden error" id="passNotExist">Password is wrong</p>
+      </div>
+    </div>
+    <div class="hidden modal" id="signUpWrapper">
+      <div class="sign-up-form">
+        <p id="closeModal" onclick="closeModal('signUpWrapper')">X</p>
+        <form id="signUpForm">
+          <input class="reg-inp" type="email" id="email" placeholder="Email" />
+          <input
+            class="reg-inp"
+            type="text"
+            id="usernameSignUp"
+            placeholder="Username"
+          />
+          <input
+            class="reg-inp"
+            type="password"
+            id="passwordSignUp"
+            placeholder="Password"
+          />
+          <input
+            class="reg-inp"
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <div class="checkbox-wrapper flex">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox" class="checkbox-txt"
+              >Agree to
+              <a href="#" class="terms-color">Terms&Conditions</a></label
+            >
+          </div>
+          <button id="signUp" onclick="signUpBtn()">Signup</button>
+        </form>
+        <p class="hidden error" id="emptyFields">
+          Please, Fill the empty fields
+        </p>
+        <p class="hidden error" id="usernameError">
+          Username must be more than 3 characters
+        </p>
+        <p class="hidden error" id="emailError">
+          Email isn't valid (example@email.com)
+        </p>
+        <p class="hidden error" id="passwordError">
+          Password must be more than 7 characters
+        </p>
+        <p class="hidden error" id="passwordErrorChar">
+          Password must have more than 1 uppercase letter
+        </p>
+        <p class="hidden error" id="checkPasswords">
+          Passwords must be the same
+        </p>
+        <p class="hidden error" id="checkboxChecked">
+          Please, Agree to terms&conditions
+        </p>
+        <p class="hidden error" id="userExists">Username has already exists</p>
+        <p class="hidden error" id="emailExists">Email has already exists</p>
+        <p class="hidden error" id="successReg">
+          Hello, You have registered successfully
+        </p>
+      </div>
+    </div>
+    <header class="fixed">
+      <div class="header-container flex">
+        <a href="index.html">
+          <img class="header-logo" src="images/header-logo.svg" alt="voyage" />
+        </a>
+        <nav>
+          <ul class="flex header-lists">
+            <li><a href="index.html" class="nav-li active">Home</a></li>
+            <li><a href="#" class="nav-li">Explore</a></li>
+            <li><a href="#" class="nav-li">About Us</a></li>
+            <li><a href="#" class="nav-li">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="sign-btn-wrapper flex">
+          <button
+            class="log-in-btn"
+            id="logMainBtn"
+            onclick="mainButton('logInWrapper','logInForm')"
+          >
+            Login
+          </button>
+          <button
+            class="btn"
+            id="signMainBtn"
+            onclick="mainButton('signUpWrapper','signUpForm')"
+          >
+            Signup
+          </button>
+          <p class="hidden" id="registrationUserName"></p>
+        </div>
+        <div class="burger-bar"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </header>
+    <!-- Explore the world section  -->
+    <section class="explore-container flex">
+      <div class="left-box">
+        <img src="images/explore-img.png" alt="Picture of the city" />
+      </div>
+      <div class="right-box">
+        <h4 class="about-heading">EXPLORE THE WORLD</h4>
+        <h3 class="explore-h">
+          Its time <span class="new-line-p">to travel around</span> the World
+        </h3>
+        <p class="explore-p">
+          Check Off the Ultimate Global Travel Checklist With your Travel
+          Partner! Make your vacation a fun, exciting, and unforgettable
+          experience.
+        </p>
+        <button class="btn">Discover Now</button>
+      </div>
+    </section>
+    <!-- Popular Destination section -->
+    <section class="popular-destination">
+      <h2 class="heading-section">Popular Destination</h2>
+      <div class="popular-container flex">
+        <div class="destination-box">
+          <img
+            class="destination-img"
+            src="images/kingdom-park.png"
+            alt="USA kingdom park"
+          />
+          <h4 class="dest-h">Magical Kingdom Park</h4>
+          <div class="location-wrapper flex">
+            <img src="images/location-icon.svg" alt="location icon" />
+            <p class="location-p">Orlando, USA</p>
+          </div>
+        </div>
+        <div class="destination-box">
+          <img
+            class="destination-img"
+            src="images/statue-of-liberty.png"
+            alt="Statue of liberty"
+          />
+          <h4 class="dest-h">Statue of Liberty</h4>
+          <div class="location-wrapper flex">
+            <img src="images/location-icon.svg" alt="location icon" />
+            <p class="location-p">New York, USA</p>
+          </div>
+        </div>
+        <div class="destination-box">
+          <img
+            class="destination-img"
+            src="images/paris-kingdom-park.png"
+            alt="Paris kingdom park"
+          />
+          <h4 class="dest-h">Magical Kingdom Park</h4>
+          <div class="location-wrapper flex">
+            <img src="images/location-icon.svg" alt="location icon" />
+            <p class="location-p">Paris, France</p>
+          </div>
+        </div>
+        <div class="destination-box">
+          <img
+            class="destination-img"
+            src="images/cn-tower.png"
+            alt="CN tower"
+          />
+          <h4 class="dest-h">CN Tower</h4>
+          <div class="location-wrapper flex">
+            <img src="images/location-icon.svg" alt="location icon" />
+            <p class="location-p">Toronto, Canada</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vacation Package section -->
+    <section class="vacation-section">
+      <h2 class="heading-section v-h">Vacation Package</h2>
+      <div class="vacation-container flex">
+        <div class="vacation-box">
+          <img class="city-img" src="images/athens.png" alt="athens" />
+          <div class="vacation-text-wrapper">
+            <h4 class="city-h">Athens, Greece</h4>
+            <img src="images/rating-three.png" alt="rating" />
+            <p class="vacation-p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra.
+            </p>
+            <div class="vac-price flex">
+              <p class="vac-price-p"><span class="from">From</span>$500</p>
+              <button class="btn vac-btn">Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="vacation-box">
+          <img class="city-img" src="images/rome.png" alt="rome" />
+          <div class="vacation-text-wrapper">
+            <h4 class="city-h">Rome, Italy</h4>
+            <img src="images/Ratings-five-stars.svg" alt="rating" />
+            <p class="vacation-p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra.
+            </p>
+            <div class="vac-price flex">
+              <p class="vac-price-p"><span class="from">From</span>$700</p>
+              <button class="btn vac-btn">Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="vacation-box">
+          <img class="city-img" src="images/agra.png" alt="agra" />
+          <div class="vacation-text-wrapper">
+            <h4 class="city-h">Agra, India</h4>
+            <img src="images/Ratings-four-stars.svg" alt="rating" />
+            <p class="vacation-p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra.
+            </p>
+            <div class="vac-price flex">
+              <p class="vac-price-p"><span class="from">From</span>$459</p>
+              <button class="btn vac-btn">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Book trip section -->
+    <section>
+      <h2 class="heading-section t-h">Book Your next trip in 3 easy steps</h2>
+      <div class="trip-container flex">
+        <div class="left-trip-box">
+          <div class="step-wrapper flex">
+            <img src="images/choose-destination.svg" alt="location icon" />
+            <div class="step-info">
+              <h4 class="step-h">Choose Destination</h4>
+              <p class="step-p">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis.
+              </p>
+            </div>
+          </div>
+          <div class="step-wrapper flex">
+            <img src="images/make-payment.svg" alt="Money icon" />
+            <div class="step-info">
+              <h4 class="step-h">Make Payment</h4>
+              <p class="step-p">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis.
+              </p>
+            </div>
+          </div>
+          <div class="step-wrapper flex">
+            <img src="images/reach-airport.svg" alt="airplane" />
+            <div class="step-info">
+              <h4 class="step-h">Reach Airport on Selected Date</h4>
+              <p class="step-p">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="right-trip-box">
+          <img src="images/trip-image.png" alt="people in the sea" />
+        </div>
+      </div>
+    </section>
+    <!-- Why choose us section -->
+    <section class="choose-section">
+      <div class="choose-container flex">
+        <div class="left-choose-box">
+          <div class="choose-pic-wrapper flex">
+            <img src="images/choose-one.png" alt="thinking about travelling" />
+            <img src="images/choose-two.png" alt="lake" />
+          </div>
+          <div class="choose-pic-wrapper flex">
+            <img src="images/choose-three.png" alt="parachute" />
+            <img src="images/choose-four.png" alt="bridge" />
+          </div>
+        </div>
+        <div class="right-choose-box">
+          <h2 class="choose-h">Why Choose Us?</h2>
+          <p class="choose-p-first">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+            lobortis.
+          </p>
+          <p class="choose-p-second">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis.
+          </p>
+          <div class="rating-wrapper flex" id="ratingWrapper">
+            <p class="quantity-p flex" id="firstQ"></p>
+            <p class="tour-rating flex" id="firstR"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- see tours section -->
+    <section>
+      <div class="back-image-wrapper flex">
+        <div class="see-tours-wrapper flex">
+          <h3 class="see-tours-h">For travel Experience book online Today</h3>
+          <p class="see-tours-p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+            lobortis.
+          </p>
+          <button class="btn see-tours-btn" onclick="seeTours()">
+            See Tours
+          </button>
+          <div class="hidden modal" id="seeToursWrapper">
+            <div id="tourWrapperBox">
+              <p id="closeSeeTours" onclick="closeModal('seeToursWrapper')">
+                X
+              </p>
+              <ul id="tourWrapper"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer section -->
+    <footer>
+      <div class="footer-container flex">
+        <a href="index.html"
+          ><img class="footer-logo" src="images/footer-logo.svg" alt="voyage"
+        /></a>
+        <div class="footer-link-wrapper">
+          <h3 class="footer-h footer-heading">Quick links</h3>
+          <ul>
+            <li><a href="index.html " class="footer-li f-h-active">Home</a></li>
+            <li><a href=" #" class="footer-li">Explore</a></li>
+            <li><a href=" #" class="footer-li">Write to Us</a></li>
+            <li><a href=" #" class="footer-li">Contact Us</a></li>
+            <li><a href=" #" class="footer-li-a">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-link-wrapper">
+          <h3 class="footer-h footer-heading">Features</h3>
+          <ul>
+            <li>
+              <a href=" #" class="footer-li">Popular Destination</a>
+            </li>
+            <li><a href=" #" class="footer-li">Vacation Packages</a></li>
+            <li><a href=" #" class="footer-li">List of Tours </a></li>
+            <li><a href=" #" class="footer-li">Gallery</a></li>
+            <li><a href=" #" class="footer-li-a">Travel on a Budget</a></li>
+          </ul>
+        </div>
+        <div class="icons-container">
+          <h3 class="footer-h">Follow Us</h3>
+          <div class="icons-wrapper flex">
+            <img
+              class="icon-f"
+              src="images/facebook-icon.svg"
+              alt="facebook icon"
+            />
+            <img src="images/insta-icon.svg" alt="instagram icon" />
+            <img src="images/twitter-icon.svg" alt="twitter icon" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

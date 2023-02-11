@@ -1,0 +1,150 @@
+@media screen and (max-width: 850px) {
+  .btn {
+    font-size: 10px;
+  }
+
+  /* header section */
+  .header-container {
+    width: 500px;
+  }
+  .fixed {
+    padding-top: 0;
+  }
+  .header-logo {
+    animation: dicrease-zoom-logo 3s linear infinite;
+  }
+
+  /* explore the world section */
+  .explore-container {
+    width: 500px;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+
+  .left-box {
+    width: 250px;
+  }
+
+  .left-box img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .right-box {
+    width: 250px;
+  }
+
+  .about-heading {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .explore-h {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .explore-p {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  /* popular destination section */
+  .popular-destination {
+    margin-bottom: 50px;
+  }
+
+  .heading-section {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .popular-container {
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dest-h {
+    text-align: center;
+  }
+
+  .location-wrapper {
+    justify-content: center;
+  }
+
+  .destination-box:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  /* book your trip section */
+  .trip-container {
+    width: 500px;
+    justify-content: center;
+  }
+
+  .right-trip-box {
+    display: none;
+  }
+
+  .left-trip-box {
+    width: 400px;
+  }
+
+  .step-h,
+  .step-p {
+    text-align: center;
+  }
+
+  /* why choose us section */
+  .choose-container {
+    width: 500px;
+  }
+
+  .right-choose-box {
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  .choose-h {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  /* see tour section */
+  .see-tours-wrapper {
+    width: 500px;
+  }
+
+  .see-tours-h {
+    margin-bottom: 40px;
+    font-size: 25px;
+  }
+
+  .see-tours-p {
+    font-size: 14px;
+    color: var(--black-color);
+  }
+
+  /* footer section */
+  footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .footer-link-wrapper {
+    display: none;
+  }
+  .footer-container {
+    width: 500px;
+    align-items: center;
+  }
+  .footer-logo {
+    margin-top: 0;
+  }
+  .icons-wrapper {
+    width: 120px;
+  }
+}

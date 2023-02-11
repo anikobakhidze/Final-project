@@ -1,0 +1,45 @@
+{
+  "tours": [
+    {
+      "id": 1,
+      "tour": "Maldives"
+    },
+    {
+      "id": 2,
+      "tour": "Bali"
+    },
+    {
+      "id": 3,
+      "tour": "Istanbul"
+    },
+    {
+      "id": 4,
+      "tour": "Amsterdam"
+    },
+    {
+      "id": 5,
+      "tour": "Barcelona"
+    },
+    {
+      "id": 6,
+      "tour": "Lisbon"
+    }
+  ],
+  "rating": [
+    {
+      "id": 7,
+      "quantity": "5K+",
+      "text": "Success To"
+    },
+    {
+      "id": 8,
+      "quantity": "10K+",
+      "text": "Happy Clients"
+    },
+    {
+      "id": 7,
+      "quantity": "15+",
+      "text": "Years Experience"
+    }
+  ]
+}
